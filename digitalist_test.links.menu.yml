@@ -1,0 +1,6 @@
+digitalist_test.beverages_search_settings:
+  title: 'Beverages search - General config form'
+  description: 'General settings form for Beverages search functionality'
+  parent: system.admin_config
+  route_name: digitalist_test.beverages_search_settings
+  weight: 100

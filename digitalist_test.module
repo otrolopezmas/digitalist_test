@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function digitalist_test_theme($existing, $type, $theme, $path) {
+  return [
+    'search_beverages_results' => [
+      'variables' => [
+        'var_search_form' => NULL,
+        'var_search_term' => NULL,
+        'var_search_results' => [],
+      ],
+    ],
+  ];
+}

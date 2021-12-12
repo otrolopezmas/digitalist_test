@@ -1,0 +1,4 @@
+services:
+  digitalist_test.beverages_api:
+    class: Drupal\digitalist_test\Service\BeveragesApi
+    arguments: [ '@logger.factory', '@config.factory', '@http_client' ]

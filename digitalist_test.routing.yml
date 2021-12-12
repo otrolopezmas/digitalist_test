@@ -1,0 +1,17 @@
+digitalist_test.search_page:
+  path: "/search-beverage"
+  defaults:
+    _title: "Search Beverages"
+    _controller: '\Drupal\digitalist_test\Controller\BeveragesSearchController::build'
+  requirements:
+    _permission: "access content"
+
+digitalist_test.beverages_search_settings:
+  path: '/admin/config/digitalist/beverages_search/settings'
+  defaults:
+    _form: '\Drupal\digitalist_test\Form\BeveragesSearchSettingsForm'
+    _title: 'Beverages search - General settings'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

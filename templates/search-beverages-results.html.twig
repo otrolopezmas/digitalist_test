@@ -1,0 +1,53 @@
+{# digitalist_test/templates/search-beverages-results.html.twig #}
+
+{#
+/**
+ * @file
+ * Theme implementation for module.
+ *
+ * Available variables:
+ * - var_search_form: Custom search form based on \Drupal\digitalist_test\Form\SearchBeveragesForm.
+ * - var_search_term: Search query term based on ?query (string).
+ * - var_search_results: Array with list of results from API call, can be empty.
+ */
+#}
+
+<section>
+  {{ var_search_form }}
+</section>
+
+{% if var_search_results is empty and (var_search_term|length != 0) %}
+  <h2>{{ "I couldn't find anything for the search term: %var_search_term" |t({'%var_search_term': var_search_term}) }}</h2>
+{% elseif var_search_results is not empty %}
+  <section>
+    <h2>{{ "This is what I could find for the search term: %var_search_term" |t({'%var_search_term': var_search_term}) }}</h2>
+    <ul
+      style="display: flex; flex-wrap: wrap; list-style-type: none;">
+      {% for item in var_search_results %}
+        <li
+          style="flex-basis:33%; flex-grow: 0; text-align: center; background: rgb(144, 238, 144, 0.2); margin: 10px; padding: 10px;">
+
+          <span style="font-size: 4rem;">🍺</span>
+
+          <h3 style="font-weight: bold">
+            {{ item.name }}
+          </h3>
+          <h4 style="font-weight: normal; margin-top: -10px">
+            from {{ item.producer }}
+          </h4>
+
+          <h3 style="border-bottom: 1px dashed black; display: inline-block">{{ item.price_sek }} SEK</h3>
+
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section style="margin-top: 50px">
+    {{ pager }}
+  </section>
+
+{% endif %}
+
+
+

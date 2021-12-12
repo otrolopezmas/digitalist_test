@@ -1,0 +1,2 @@
+GET_url: 'http://systembevakningsagenten.se/api/json/1.0/searchProduct.json'
+pager_number_items_page: 5

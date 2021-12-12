@@ -1,0 +1,5 @@
+name: 'Digitalist test'
+type: module
+description: 'Custom module for Test with Digitalist'
+core_version_requirement: ^8.8.0 || ^9
+package: 'Custom'
